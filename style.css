@@ -1,0 +1,243 @@
+/* General Styling for AI / Cybersecurity Theme (Black & Green) */
+body {
+    font-family: 'Consolas', 'Courier New', monospace; /* Monospace font for code/terminal feel */
+    color: #00ff41; /* Primary text color: Vibrant Green */
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    
+    /* --- NEW DIGITAL/MATRIX BACKGROUND --- */
+    background-color: #0d0d0d; /* Very Dark Gray/Almost Black base */
+    background-image: 
+        /* Subtle digital noise/grid */
+        radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+        /* Faint dark matrix lines */
+        linear-gradient(0deg, transparent 49%, #1a1a1a 50%, transparent 51%),
+        linear-gradient(90deg, transparent 49%, #1a1a1a 50%, transparent 51%);
+    
+    background-size: 
+        50px 50px, /* Noise size */
+        100px 100px, /* Vertical lines */
+        100px 100px; /* Horizontal lines */
+    
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    
+    /* Ensure scrollbar matches theme */
+    scrollbar-color: #00ff41 #1a1a1a;
+}
+
+.container {
+    /* Container: Transparent dark overlay, floating digital panel */
+    background: rgba(15, 15, 15, 0.9); /* Dark background with slight transparency */
+    color: #e0e0e0; /* Light text for readability inside the panel */
+    
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 
+        0 0 30px rgba(0, 255, 65, 0.4), /* Intense green glow */
+        0 0 10px rgba(0, 255, 65, 0.2), /* Soft inner glow */
+        inset 0 0 10px rgba(0, 255, 65, 0.1); /* Inner edge glow */
+    
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    border: 1px solid #00ff41; /* Thin vibrant green border */
+    backdrop-filter: blur(5px); /* Soft blur effect */
+    -webkit-backdrop-filter: blur(5px);
+}
+
+h1 {
+    font-family: 'Digital', monospace; /* Digital/code font */
+    color: #00ff41; /* Vibrant green title */
+    margin-bottom: 15px;
+    border-bottom: 3px solid rgba(0, 255, 65, 0.5);
+    padding-bottom: 12px;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8); /* Glow effect on title */
+    position: relative;
+}
+
+h1::after {
+    /* Sub-line under the main border */
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff41, transparent);
+}
+
+p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #aaaaaa; /* Gray text for body copy */
+}
+
+/* Input Area - Terminal Input Style */
+#newsInput {
+    width: 95%;
+    height: 180px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 2px solid #00ff41;
+    border-radius: 4px;
+    font-size: 17px;
+    resize: vertical;
+    box-sizing: border-box;
+    font-family: 'Consolas', monospace;
+    background: #000000; /* Pure black input field */
+    color: #00ff41; /* Green text input */
+    box-shadow: 
+        inset 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+#newsInput:focus {
+    border-color: #00ff41;
+    outline: none;
+    box-shadow: 
+        0 0 0 3px rgba(0, 255, 65, 0.3), /* Outer focus ring */
+        inset 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Button - Digital Console Button */
+button {
+    background: #00ff41;
+    color: #111111; /* Dark text on green button */
+    padding: 16px 35px;
+    border: 2px solid #00cc33;
+    border-radius: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-family: 'Consolas', monospace;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.7); /* Button glow */
+}
+
+button::before {
+    /* Digital scanline hover effect */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+button:hover {
+    background: #00cc33;
+    box-shadow: 
+        0 0 25px rgba(0, 255, 65, 1.0),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Result Box - Digital Output Panel */
+.result {
+    margin-top: 40px;
+    padding: 35px;
+    border-radius: 8px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    transition: all 0.5s ease;
+    border-left-width: 8px;
+    border-left-style: solid;
+    box-shadow: 
+        0 0 15px rgba(0, 255, 65, 0.2);
+    position: relative;
+    background: rgba(5, 5, 5, 0.85); /* Very dark background for result area */
+    color: #00ff41; /* Green text in the output area */
+}
+
+.result h2 {
+    margin-top: 0;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Consolas', monospace;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+.result p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #cccccc; /* Slightly lighter gray for body text */
+}
+
+/* Specific Result Styles - Status Indicators */
+
+/* REAL: Trusted/Verified (Solid Green) */
+.real {
+    background: rgba(0, 50, 0, 0.85); /* Deep green background */
+    border-left-color: #00ff41; 
+    color: #00ff41;
+}
+.real p {
+    color: #aaffaa;
+}
+
+/* FAKE: Critical Error/Threat (Red Alert) */
+.fake {
+    background: rgba(50, 0, 0, 0.85); /* Deep red background */
+    border-left-color: #ff0000; /* Red alert */
+    color: #ff0000;
+}
+.fake p {
+    color: #ffaaaa;
+}
+
+/* NEUTRAL: Processing/Inconclusive (Yellow/Cyan) */
+.neutral {
+    background: rgba(0, 0, 50, 0.85); /* Dark blue background */
+    border-left-color: #00ffff; /* Cyan/Blue border */
+    color: #00ffff;
+}
+.neutral p {
+    color: #aaffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    
+    .container {
+        padding: 25px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    #newsInput {
+        width: 100%;
+        height: 150px;
+    }
+}
